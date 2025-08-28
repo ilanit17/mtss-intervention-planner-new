@@ -17,7 +17,15 @@ export default defineConfig(({ mode }) => {
       build: {
         outDir: 'dist',
         assetsDir: 'assets',
-        sourcemap: false
+        sourcemap: false,
+        rollupOptions: {
+          input: {
+            main: path.resolve(__dirname, 'index.html')
+          }
+        }
+      },
+      css: {
+        devSourcemap: false
       }
     };
 });
